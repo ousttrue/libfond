@@ -1,7 +1,8 @@
 #include "fond.h"
 #include <stdio.h>
 #if defined(WIN32) || defined(_WIN32)
-#  define FOND_WIN
+#define FOND_WIN
+#  include <windows.h>
 #  include <GL/gl.h>
 #  include <GL/glext.h>
 #  include "fond_windows.h"
@@ -19,7 +20,7 @@
 #  include <GL/glext.h>
 #endif
 
-int errorcode;
+extern int errorcode;
 void fond_err(int code);
 int fond_check_glerror();
 int fond_check_shader(GLuint shader);
